@@ -3067,6 +3067,7 @@ i{
 
 /*=======================single case page==================*/
 .author-desc{
+    margin-top: 44px;
     .post-date{
         font-size: 22px;
         color: $nobel;
@@ -3078,30 +3079,171 @@ i{
         font-size: 26px;
         font-style: italic;
         line-height: 35px;
+        margin-bottom: 35px;
     }
-    .download-link{
-        font-size: 25px;
-        font-weight: 700;
-        line-height: 35px;
-        background-image: url();
-        background-position: right center;
-        background-size: 27px 23px;
-        display: block;
-        width: 200px;
-        color: $darkblue;
-        padding-bottom: 4px;
-        border-bottom: 1px solid $darkblue;
+    h2{
+        margin-bottom: 11px;
     }
-    .single_image_wrap{
+}
+.single_image_wrap{
         float: left;
         width: 279px;
     }
-    .single_wrap_content{
+.single_wrap_content{
         float: right;
         width: calc( 100% - 298px );
+        .download-link{
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 35px;
+            background-image: url(images/download.png);
+            background-position: right top 4px;
+            background-size: 27px 23px;
+            display: block;
+            width: 210px;
+            color: $darkblue;
+//            padding-bottom: 4px;
+//            border-bottom: 1px solid $darkblue;
+            margin-top: 5px;
+            background-repeat: no-repeat;
+            position: relative;
+            &:after{
+                content: "";
+                width: 170px;
+                position: absolute;
+                bottom: 4px;
+                height: 1px;
+                background: $darkblue;
+                left:0px;
+            }
+        }
+    }
+/*=====================end single case page================*/
+/*=====================Blog Page===========================*/
+.page-template-page-blog{
+    .general-page {
+        padding-top: 130px;
     }
 }
-/*=====================end single case page================*/
+.post-block{
+    padding: 0px 0px 0px 42px;
+    font-family: $font-akzidenzgrotesk;
+    margin: 0px 0px 55px;
+    .post-content{
+        float: left;
+        width: calc(100% - 204px);
+        .cat-lists{
+            color: $nobel;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        h6{
+            color: $black;
+            font-weight: 500;
+            margin: 0px;
+            font-size: 26px;
+        }
+        .post-excerpt{
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 22px;
+        }
+    }
+    .post-read-more{
+        float: right;
+        width: 149px;
+        margin-top: 50px;
+        a {
+            color: $darkblue;
+            padding: 7px 10px 5px;
+            font-size: 22px;
+            line-height: 22px;
+            text-transform: uppercase;
+            border-radius: 32px;
+            -webkit-border-radius: 32px;
+            -moz-border-radius: 32px;
+            -o-border-radius: 32px;
+            -ms-border-radius: 32px;
+            border-width: 2.5px;
+            border-color: $darkblue;
+            border-style: solid;
+            text-align: center;
+            font-family: $font-akzidenzgrotesk;
+            font-weight: normal;
+            display: block;
+        }
+    }
+    
+}
+.blog-sidebar {
+    position: absolute;
+    width: 220px;
+    .blog-widgets{
+        border-bottom: 2px solid $blogsidebar;
+        font-family: $font-akzidenzgrotesk;
+        color: $gray;
+        font-size: 24px;
+        line-height: 32px;
+        padding-left: 50px;
+        text-transform: uppercase;
+        &:first-child{
+           border-top: 2px solid $blogsidebar;
+        }
+        h5{
+            font-family: $font-akzidenzgrotesk;
+            color: $gray;
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 500;
+            padding-top:19px;
+            letter-spacing: 2px;
+            position: relative;
+            .right-arrow{
+                width: 12px;
+                height: 18px;
+                display: block;
+                position: absolute;
+                right:20px;
+                top:25px;
+                background-image: url('images/arrow-right.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                -webkit-transition:all 0.3s ease;  
+                -moz-transition:all 0.3s ease;  
+                -o-transition:all 0.3s ease;  
+                -ms-transition:all 0.3s ease;  
+                transition:all 0.3s ease; 
+                cursor: pointer;
+            }
+//            .right-arrow.active{
+//                -webkit-transform:rotateX(90deg);
+//                -moz-transform:rotateX(90deg);
+//                -ms-transform:rotateX(90deg);
+//                -o-transform:rotateX(90deg);
+//                transform:rotateX(90deg);
+//            }
+        }
+        ul{
+            margin: 0px;
+            display: none;
+            padding-bottom:19px;
+            li a{
+                font-family: $font-akzidenzgrotesk;
+                color: $gray;
+                font-size: 22px;
+                line-height: 32px;
+            }
+        }
+    }
+    .widget-content{
+        display: none;
+    }
+}
+/*=====================end Blog page=======================*/
 /*========================end main css=================*/
 
 /*=================================================responsive design====================================================*/
@@ -3366,7 +3508,7 @@ i{
         padding: 30px 0px;
     }
     .single{
-        padding-top:94px;
+//        padding-top:94px;
     }
     .header-block{
         width: calc( 100% - 260px );
@@ -3819,6 +3961,28 @@ i{
         margin-right: 0;
         margin-bottom: 10px;
     }
+    .author-desc {
+        margin-top: 64px;
+        .post-date {
+            font-size: 16px;
+            line-height: 25px;
+        }
+        .author-name {
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 15px;
+        }
+    }
+    .single_image_wrap {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .single_wrap_content {
+        float: none;
+        width: 100%;
+    }
 }
 @media (max-width : 720px){
 	.footer-section{
@@ -4105,6 +4269,9 @@ i{
     .bottom-section .btm-blk .blk-content{
         padding: 20px 30px;
         font-size: 20px;
+    }
+    .header-block {
+        width: 100%;
     }
 }
 @media (max-width : 480px){

@@ -355,6 +355,18 @@ function theme_register_sidebars() {
 		'after_title' => '</h3>',
 	));
     
+    register_sidebar(array(
+	'id' => 'blog-sidebar',
+	'name' => __('Blog Sidebar'),
+		'description' => __('The Blog Sidebar.'),
+		'before_widget' => '<div id="%1$s" class="widget blog-widgets %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h5 class="widget-title">',
+		'after_title' => '<span class="right-arrow"></span></h5>',
+        'before_content' => '<div class="widget-content">',
+		'after_content' => '</div>',
+	));
+    
    
 
 } // don't remove this bracket!
@@ -418,4 +430,32 @@ function force_download(){
     header('Content-Length: ' . filesize($files));
     readfile($files);
 }
+
+
+////Load more
+//add_action('wp_ajax_loadMore', 'loadMore');
+//add_action('wp_ajax_nopriv_loadMore', 'loadMore'); 
+//function loadMore() {
+//
+//    $blogger_id = $_POST['id'];
+//    // get your $_GET variables sorted out
+//
+//    // setup your query to get what you want
+//    query_posts('posts_per_page=' . $posts . '&author='.$blogger_id);
+//
+//    // initialsise your output
+//    $output = '';
+//
+//    // the Loop
+//    while (have_posts()) : the_post();
+//
+//        // define the structure of your posts markup
+//
+//    endwhile;
+//    // Reset Query
+//    wp_reset_query();
+//
+//    die($output);
+//
+//}
 ?>

@@ -101,6 +101,10 @@ jQuery(document).ready(function(){
 //            window.open(Theme.ajax_url + "?action=force_download&file=" + file );
 //            return false;
 //    });
+    jQuery(".right-arrow").click(function(){
+        jQuery(this).toggleClass('active');
+        jQuery(this).parent().parent().find('ul').slideToggle();
+    });
         jQuery('li.no-link > a').click(function(){
             if(jQuery(this).parent().hasClass('active')){
                jQuery(this).parent().removeClass('active');
