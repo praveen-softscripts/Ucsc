@@ -1,0 +1,20 @@
+[15-Feb-2017 07:54:16 UTC] WordPress database error Unknown column 'wp_' in 'field list' for query SELECT wp_
+[16-Feb-2017 12:45:26 UTC] PHP Fatal error:  Cannot unset string offsets in /home/hikerco/public_html/ucsc/wp-content/plugins/acf-repeater/repeater.php on line 211
+[20-Feb-2017 07:38:34 UTC] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[20-Feb-2017 08:23:30 UTC] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[20-Feb-2017 08:24:24 UTC] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[20-Feb-2017 08:26:25 UTC] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[20-Feb-2017 09:58:08 UTC] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[20-Feb-2017 11:08:12 UTC] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[20-Feb-2017 11:19:17 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 354
+[20-Feb-2017 11:23:01 UTC] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[20-Feb-2017 11:29:43 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 354
+[15-Mar-2017 11:47:24 UTC] PHP Warning:  filesize(): stat failed for &lt;?php $file= get_field(\'download_file\',$post-&gt;ID); echo $url = $file[\'url\']; ?&gt; in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 418
+[15-Mar-2017 11:47:24 UTC] PHP Warning:  readfile(&lt;?php $file= get_field(\'download_file\',$post-&gt;ID); echo $url = $file[\'url\']; ?&gt;): failed to open stream: No such file or directory in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 419
+[15-Mar-2017 11:48:02 UTC] PHP Warning:  filesize(): stat failed for &lt;?php $file= get_field(\'download_file\',$post-&gt;ID); echo $url = $file[\'url\']; ?&gt; in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 418
+[15-Mar-2017 11:48:02 UTC] PHP Warning:  readfile(&lt;?php $file= get_field(\'download_file\',$post-&gt;ID); echo $url = $file[\'url\']; ?&gt;): failed to open stream: No such file or directory in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 419
+[15-Mar-2017 11:53:30 UTC] PHP Warning:  readfile(): Filename cannot be empty in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 419
+[15-Mar-2017 12:03:41 UTC] PHP Warning:  filesize(): stat failed for &lt;?php echo get_field(\&quot;download_file\&quot;,$post-&gt;ID); ?&gt; in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 418
+[15-Mar-2017 12:03:41 UTC] PHP Warning:  readfile(&lt;?php echo get_field(\&quot;download_file\&quot;,$post-&gt;ID); ?&gt;): failed to open stream: No such file or directory in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 419
+[15-Mar-2017 12:05:17 UTC] PHP Warning:  filesize(): stat failed for &lt;?php echo get_field(\'download_file\',$post-&gt;ID); ?&gt; in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 418
+[15-Mar-2017 12:05:17 UTC] PHP Warning:  readfile(&lt;?php echo get_field(\'download_file\',$post-&gt;ID); ?&gt;): failed to open stream: No such file or directory in /home/hikerco/public_html/ucsc/wp-content/themes/ucsc/functions.php on line 419
