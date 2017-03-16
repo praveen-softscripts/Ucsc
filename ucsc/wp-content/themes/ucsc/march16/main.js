@@ -177,50 +177,11 @@ jQuery(document).ready(function(){
 			jQuery(this).toggleClass('active');
 	});	
     //show sub menu in mobile
-//		jQuery('.mobile-nav ul li a span.menu-arrow').click(function(){
-//				jQuery(this).toggleClass('active');
-//                jQuery(this).parent().parent().find('> .sub-menu').slideToggle();
-//				return false;
-//		});
-        jQuery('.mobile-nav  ul > li:has(ul) > a').click(function(){
-				jQuery(this).find('span').toggleClass('active');
-                jQuery(this).parent().find('> .sub-menu').slideToggle();
+		jQuery('.mobile-nav ul li a span.menu-arrow').click(function(){
+				jQuery(this).toggleClass('active');
+                jQuery(this).parent().parent().find('> .sub-menu').slideToggle();
 				return false;
 		});
-    //ajax blog posts load
-    jQuery('#load-more').click(function(){
-        jQuery("#load-more").fadeOut();
-        jQuery("#loading").fadeIn();
-        var page = jQuery(".posts-page-count").attr('count-val'); // What page we are on.
-        var ppp = 11; // Posts per page
-        
-        var data = {
-            offset: (page * ppp) + 1,
-            ppp: ppp,
-            action:"more_post_ajax",
-        }
-        jQuery.ajax({
-            type: 'POST',
-            url: Theme.ajax_url,
-            dataType: 'json',
-            data:data,
-            success:function(posts){
-                if(posts.status == 'true'){
-                    page++;
-                    jQuery(".posts-page-count").attr('count-val',page++);
-                    jQuery(".more-posts").append(posts.html); // CHANGE THIS!
-                    jQuery("#loading").fadeOut();
-                    jQuery("#load-more").fadeIn();
-                }
-                else{
-                   jQuery("#load-more").hide();
-                    jQuery("#loading").hide();
-                    jQuery("#no-more").fadeIn();
-                }
-            }    
-        });
-    });
-    
 });
 
 function matchheight(){

@@ -3125,6 +3125,11 @@ i{
         padding-top: 130px;
     }
 }
+.archive{
+    .general-page {
+        padding-top: 130px;
+    }
+}
 .post-block{
     padding: 0px 0px 0px 42px;
     font-family: $font-akzidenzgrotesk;
@@ -3176,7 +3181,50 @@ i{
             display: block;
         }
     }
-    
+}
+.load-more{
+        color: $darkblue;
+        font-family: $font-akzidenzgrotesk;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 35px;
+        width: 100%;
+        position: relative;
+        margin-top: 100px;
+        display: block;
+        height: 14px;
+        cursor: pointer;
+        &:before,&:after{
+            content: "";
+            position: absolute;
+            width: calc(50% - 63.5px );
+            height: 6px;
+            background: $darkblue;
+        }
+        &:before{
+            left:0px;
+        }
+        &:after{
+            right:0px;
+        }
+        span {
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            top: -14px;
+            display: block;
+        }
+        &.no-more-posts,&.loading{
+            display: none;
+        }
+    }
+.hidden{
+    display: none;
 }
 .blog-sidebar {
     position: absolute;
@@ -3219,13 +3267,13 @@ i{
                 transition:all 0.3s ease; 
                 cursor: pointer;
             }
-//            .right-arrow.active{
-//                -webkit-transform:rotateX(90deg);
-//                -moz-transform:rotateX(90deg);
-//                -ms-transform:rotateX(90deg);
-//                -o-transform:rotateX(90deg);
-//                transform:rotateX(90deg);
-//            }
+            .right-arrow.active{
+                -webkit-transform:rotate(90deg);
+                -moz-transform:rotate(90deg);
+                -ms-transform:rotate(90deg);
+                -o-transform:rotate(90deg);
+                transform:rotate(90deg);
+            }
         }
         ul{
             margin: 0px;
@@ -3244,6 +3292,78 @@ i{
     }
 }
 /*=====================end Blog page=======================*/
+/*=====================Blog Single Page====================*/
+.post-meta-values{
+    .post-date{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        padding-right: 5px;
+        border-right:1px solid;
+        float: left;
+        line-height: 1;
+        &:last-child{
+            margin: 0px;
+            padding: 0px;
+            border: none;
+        }
+        a{
+            letter-spacing: 1px;
+        }
+        &.post-category{
+            font-weight: 500;
+        }
+    }
+}
+.single-postspage{
+    .single_wrap_content .download-link{
+        width: 58px;
+        background: none;
+        &:after{
+            width: 58px;
+        }
+    }
+    .single_wrap_content {
+        width: 100%;
+    }
+    .breadcrumb{
+        margin:32px 0px 34px;
+        ul{
+            padding: 0px;
+            margin: 0px;
+            font-size: 0px;
+            line-height: 1;
+            li{
+                display: inline-block;
+                position: relative;
+                line-height: 1;
+                &:after{
+                    content: ">";
+                    padding: 0px 3px;
+                    display: inline-block;
+                    position: relative;
+                    font-size: 16px;
+                }
+                &:last-child{
+                    &:after{
+                        display: none;
+                    }
+                }
+                a{
+                    font-family: $font-akzidenzgrotesk;
+                    color: $black;
+                    font-size: 14px;
+                    line-height: 1;
+                    font-weight: 400;
+                    &:hover{
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
+}
+/*===================end Blog Single PAge==================*/
 /*========================end main css=================*/
 
 /*=================================================responsive design====================================================*/

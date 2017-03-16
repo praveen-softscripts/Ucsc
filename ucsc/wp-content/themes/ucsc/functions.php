@@ -432,30 +432,111 @@ function force_download(){
 }
 
 
-////Load more
-//add_action('wp_ajax_loadMore', 'loadMore');
-//add_action('wp_ajax_nopriv_loadMore', 'loadMore'); 
-//function loadMore() {
-//
-//    $blogger_id = $_POST['id'];
-//    // get your $_GET variables sorted out
-//
-//    // setup your query to get what you want
-//    query_posts('posts_per_page=' . $posts . '&author='.$blogger_id);
-//
-//    // initialsise your output
-//    $output = '';
-//
-//    // the Loop
-//    while (have_posts()) : the_post();
-//
-//        // define the structure of your posts markup
-//
-//    endwhile;
-//    // Reset Query
-//    wp_reset_query();
-//
-//    die($output);
-//
-//}
+//Load more blog posts
+function more_post_ajax(){
+    $offset = $_REQUEST["offset"];
+    $ppp = $_REQUEST["ppp"];
+    $count_posts = wp_count_posts( 'post' )->publish;
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => $ppp,
+        'offset' => $offset
+    );
+    $loop = new WP_Query($args);
+    $output="";
+    $result= array();
+    $result['status'] = 'false';
+    if($count_posts >= $offset){
+        if($loop->have_posts()): while($loop->have_posts()): $loop->the_post(); 
+        $output.="<div class='post-block clearfix'><div class='post-content'>";
+        $output.="<div class='cat-lists'>".get_the_category_list(',','','')."</div>";            
+        $output.="<h6>".get_the_title()."</h6>"; 
+        $output.="<div class='post-excerpt'>".wp_trim_words(  get_the_content(), 22, ' ' )."</div>"; 
+        $output.="</div>";
+        $output.="<div class='post-read-more'>";
+        $output.="<a href=".get_the_permalink()." class='btn read-more-btn' >readmore</a>";            
+        $output.="</div>"; 
+        $output.="</div>";
+    endwhile; wp_reset_query(); endif;
+        $result['status'] = 'true';
+        $result['html'] =  $output;
+        echo json_encode($result);
+    }
+    else{
+        $result['html']= "no more posts";
+        echo json_encode($result);
+    }
+    die();
+    
+}
+
+add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax'); 
+add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
+
+//Load more blog category posts
+function more_cat_post_ajax(){
+    $offset = $_REQUEST["offset"];
+    $ppp = $_REQUEST["ppp"];
+    $cat = $_REQUEST["cat"];
+    $cat_val = intval($cat);
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => $ppp,
+        'cat' => $cat_val,
+        'offset' => $offset
+    );
+    $loop = new WP_Query($args);
+    $output="";
+    $result= array();
+    $result['status'] = 'false';
+    $count = $loop->post_count;
+    $args_val = array(
+        'post_type' => 'post',
+        'cat' => $cat_val,
+    );
+    $args_val = array(
+      'cat' => $cat_val,
+      'post_type' => 'post'
+    );
+    $the_query = new WP_Query( $args_val );
+    $query_val = $the_query->found_posts;
+    if($query_val >= $offset){
+        if($loop->have_posts()): while($loop->have_posts()): $loop->the_post(); 
+            $output.="<div class='post-block clearfix'><div class='post-content'>";
+            $output.="<div class='cat-lists'>".get_the_category_list(',','','')."</div>";            
+            $output.="<h6>".get_the_title()."</h6>"; 
+            $output.="<div class='post-excerpt'>".wp_trim_words(  get_the_content(), 22, ' ' )."</div>"; 
+            $output.="</div>";
+            $output.="<div class='post-read-more'>";
+            $output.="<a href=".get_the_permalink()." class='btn read-more-btn' >readmore</a>";            
+            $output.="</div>"; 
+            $output.="</div>";
+    endwhile; wp_reset_query(); endif;
+        $result['status'] = 'true';
+        $result['html'] =  $output;
+        echo json_encode($result);
+    }
+    else{
+       $result['status'] = 'false';
+        echo json_encode($result);
+    }
+    die();
+    
+}
+
+add_action('wp_ajax_nopriv_more_cat_post_ajax', 'more_cat_post_ajax'); 
+add_action('wp_ajax_more_cat_post_ajax', 'more_cat_post_ajax');
+
+//single post page breadcrumb
+function breadcrumb($postid){
+    $output="";
+    $output.="<div class='breadcrumb clearfix'>";
+    $output.="<ul>";
+    $output.="<li><a href=".get_permalink( get_page_by_path( 'blog' ) ).">Blog</a></li>";
+    $output.="<li>".get_the_category_list(',','','')."</li>";
+    $output.="<li><a href=".get_permalink( $postid ).">".get_the_title($postid)."</a></li>";
+    $output.="</ul>";
+    $output.="</div>";
+    return $output;
+}
 ?>

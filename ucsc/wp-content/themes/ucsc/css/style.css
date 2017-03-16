@@ -3367,9 +3367,6 @@ i {
 .page-template-page-blog .general-page {
   padding-top: 130px; }
 
-.archive .general-page {
-  padding-top: 130px; }
-
 .post-block {
   padding: 0px 0px 0px 42px;
   font-family: "akzidenzgrotesk";
@@ -3416,45 +3413,6 @@ i {
       font-weight: normal;
       display: block; }
 
-.load-more {
-  color: #184168;
-  font-family: "akzidenzgrotesk";
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 35px;
-  width: 100%;
-  position: relative;
-  margin-top: 100px;
-  display: block;
-  height: 14px;
-  cursor: pointer; }
-  .load-more:before, .load-more:after {
-    content: "";
-    position: absolute;
-    width: calc(50% - 63.5px );
-    height: 6px;
-    background: #184168; }
-  .load-more:before {
-    left: 0px; }
-  .load-more:after {
-    right: 0px; }
-  .load-more span {
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    top: -14px;
-    display: block; }
-  .load-more.no-more-posts, .load-more.loading {
-    display: none; }
-
-.hidden {
-  display: none; }
-
 .blog-sidebar {
   position: absolute;
   width: 220px; }
@@ -3494,12 +3452,6 @@ i {
         -ms-transition: all 0.3s ease;
         transition: all 0.3s ease;
         cursor: pointer; }
-      .blog-sidebar .blog-widgets h5 .right-arrow.active {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg); }
     .blog-sidebar .blog-widgets ul {
       margin: 0px;
       display: none;
@@ -3513,60 +3465,6 @@ i {
     display: none; }
 
 /*=====================end Blog page=======================*/
-/*=====================Blog Single Page====================*/
-.post-meta-values .post-date {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 5px;
-  padding-right: 5px;
-  border-right: 1px solid;
-  float: left;
-  line-height: 1; }
-  .post-meta-values .post-date:last-child {
-    margin: 0px;
-    padding: 0px;
-    border: none; }
-  .post-meta-values .post-date a {
-    letter-spacing: 1px; }
-  .post-meta-values .post-date.post-category {
-    font-weight: 500; }
-
-.single-postspage .single_wrap_content .download-link {
-  width: 58px;
-  background: none; }
-  .single-postspage .single_wrap_content .download-link:after {
-    width: 58px; }
-.single-postspage .single_wrap_content {
-  width: 100%; }
-.single-postspage .breadcrumb {
-  margin: 32px 0px 34px; }
-  .single-postspage .breadcrumb ul {
-    padding: 0px;
-    margin: 0px;
-    font-size: 0px;
-    line-height: 1; }
-    .single-postspage .breadcrumb ul li {
-      display: inline-block;
-      position: relative;
-      line-height: 1; }
-      .single-postspage .breadcrumb ul li:after {
-        content: ">";
-        padding: 0px 3px;
-        display: inline-block;
-        position: relative;
-        font-size: 16px; }
-      .single-postspage .breadcrumb ul li:last-child:after {
-        display: none; }
-      .single-postspage .breadcrumb ul li a {
-        font-family: "akzidenzgrotesk";
-        color: #000000;
-        font-size: 14px;
-        line-height: 1;
-        font-weight: 400; }
-        .single-postspage .breadcrumb ul li a:hover {
-          color: #636363; }
-
-/*===================end Blog Single PAge==================*/
 /*========================end main css=================*/
 /*=================================================responsive design====================================================*/
 @media screen and (max-width: 1280px) {

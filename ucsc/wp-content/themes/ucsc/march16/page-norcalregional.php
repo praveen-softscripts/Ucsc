@@ -56,15 +56,11 @@ get_header();
                     </div>
                     <div class="event-posts">
                         <ul>
-                           <?php $date= get_field('dates');
-                                      $dates= strtotime($date); ?>
-        <?php $args = array( 'post_type' => 'events', 'posts_per_page' => 5,'meta_key'=> 'dates','orderby'=> 'meta_value','order'=> 'ASC');
+                            <?php $args = array( 'post_type' => 'events', 'posts_per_page' => 5);
                             $loop = new WP_Query( $args );
                             while ( $loop->have_posts() ) : $loop->the_post(); ?>
                                 <li>
-                                    <?php $date= get_field('dates');
-                                      $dates= strtotime($date); ?>
-								    <div class="post-date"><?php echo date('M',$dates); ?><span><?php echo date('j',$dates); ?></span></div>
+                                    <div class="post-date"><?php echo get_the_date('M'); ?><span><?php echo get_the_date('n'); ?></span></div>
                                     <div class="post-desc"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></div>
                                 </li>
                             <?php endwhile; wp_reset_query(); ?>

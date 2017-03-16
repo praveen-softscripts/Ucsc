@@ -17,11 +17,9 @@ get_template_part('banner','block') ?>
 	
 	<div class="section">
 		<div class="language-section">
-		    <?php if(get_field('editor')){ ?>
-                <div class="video-section container c795">
-                    <?php echo get_field('editor'); ?>
-                </div>
-			<?php } ?>
+			<div class="video-section container c795">
+				<?php echo get_field('editor'); ?>
+			</div>
 			<div class="announcements-section">
 				<div class="announce-icon">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/announceicon.png" alt="icon"/>					
@@ -29,15 +27,11 @@ get_template_part('banner','block') ?>
 				<div class="announce-title"><?php _e('Announcements','ucsc'); ?></div>
 				<div class="announce-posts">
 					<ul>
-					<?php $date= get_field('dates');
-                                      $dates= strtotime($date); ?>
-        <?php $args = array( 'post_type' => 'announcement', 'posts_per_page' => 3,'meta_key'=> 'dates','orderby'=> 'meta_value','order'=> 'ASC');
+						<?php $args = array( 'post_type' => 'announcement', 'posts_per_page' => 3);
   						$loop = new WP_Query( $args );
    						while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<li>
-							    <?php $date= get_field('dates');
-                                      $dates= strtotime($date); ?>
-								<div class="post-date"><?php echo date('M',$dates); ?><span><?php echo date('j',$dates); ?></span></div>
+								<div class="post-date"><?php echo get_the_date('M'); ?><span><?php echo get_the_date('n'); ?></span></div>
 								<div class="post-desc"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></div>
 							</li>
 						<?php endwhile; wp_reset_query(); ?>

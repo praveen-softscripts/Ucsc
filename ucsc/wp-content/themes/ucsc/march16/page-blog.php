@@ -34,14 +34,14 @@ get_header(); ?>
                            </div>
                        </div>   
                     <?php endwhile; wp_reset_query(); endif; ?>
-                    <?php $count_posts = wp_count_posts( 'post' )->publish;
-                    if($count_posts > 12 ){?>
                     <div class="more-posts"></div>
-                    <div class="posts-page-count hidden" count-val="1"></div>
-                    <div class="load-more" id="load-more"><span>Load More</span></div>
-                    <div class="loading load-more" id="loading"><span>Loading...</span></div>
-                    <div class="no-more-posts load-more" id="no-more"><span>No More Posts</span></div>
-                   <?php }?>
+                    <div class="load-more">Load More</div>
+                    <div class=""><?php $max = $wp_query->max_num_pages;
+                                        $paged = ( get_query_var('paged') > 1 ) ? get_query_var('paged') : 1; 
+//                                        echo $paged;
+//                                        echo $max;
+                                    ?>
+                    </div>
                 </div>
              </div>
     </div> 
