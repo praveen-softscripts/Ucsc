@@ -12,7 +12,7 @@ get_header(); ?>
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 <div id="content" class="general-page general-page-section clearfix" role="main">
     <div class="page-main-block clearfix">
-           <div class="blog-sidebar">
+           <div class="blog-sidebar hide-w-1200">
                <?php dynamic_sidebar('blog-sidebar'); ?>
             </div>
             <div class="container">
@@ -36,12 +36,15 @@ get_header(); ?>
                     <?php endwhile; wp_reset_query(); endif; ?>
                     <?php $count_posts = wp_count_posts( 'post' )->publish;
                     if($count_posts > 12 ){?>
-                    <div class="more-posts"></div>
-                    <div class="posts-page-count hidden" count-val="1"></div>
-                    <div class="load-more" id="load-more"><span>Load More</span></div>
-                    <div class="loading load-more" id="loading"><span>Loading...</span></div>
-                    <div class="no-more-posts load-more" id="no-more"><span>No More Posts</span></div>
+                        <div class="more-posts"></div>
+                        <div class="posts-page-count hidden" count-val="1"></div>
+                        <div class="load-more" id="load-more"><span>Load More</span></div>
+                        <div class="loading load-more" id="loading"><span>Loading...</span></div>
+                        <div class="no-more-posts load-more" id="no-more"><span>No More Posts</span></div>
                    <?php }?>
+                </div>
+                <div class="blog-sidebar show-w-1200">
+                   <?php dynamic_sidebar('blog-sidebar'); ?>
                 </div>
              </div>
     </div> 

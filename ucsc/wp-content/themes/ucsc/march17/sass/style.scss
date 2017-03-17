@@ -3363,12 +3363,6 @@ i{
         }
     }
 }
-.hide-w-1200{
-    display: block;
-}
-.show-w-1200{
-    display: none;
-}
 /*===================end Blog Single PAge==================*/
 /*========================end main css=================*/
 
@@ -3546,24 +3540,6 @@ i{
     .header-nav .header-menu > li a {
         padding: 50px 38px 35px;
     }
-    .hide-w-1200{
-        display: none;
-    }
-    .show-w-1200{
-        display: block;
-    }
-    .blog-sidebar {
-        position: static;
-        width: 100%;
-    }
-    .archive .general-page,.page-template-page-blog .general-page {
-        padding-top: 90px;
-    }
-    .load-more{
-        margin-top: 0px;
-        margin-bottom: 35px;
-    }
-
 }
 @media (max-width : 1180px){
 	.m-students .member{
@@ -3662,9 +3638,6 @@ i{
     }
     .header-nav .header-menu > li:nth-child(1) a {
         padding-left: 56px;
-    }
-    .single-postspage .breadcrumb {
-        margin: 80px 0px 34px;
     }
 }
 
@@ -4130,103 +4103,7 @@ i{
         float: none;
         width: 100%;
     }
-    .post-block{
-        padding: 0px 0px 0px 20px;
-        margin: 0px 0px 30px;
-        .post-content{
-            float: none;
-            width: 100%;
-            .cat-lists{
-                color: $nobel;
-                font-size: 14px;
-                line-height: 22px;
-                font-weight: 500;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            h6{
-                color: $black;
-                font-weight: 500;
-                margin: 5px 0px;
-                font-size: 20px;
-            }
-            .post-excerpt{
-                font-size: 18px;
-                line-height: 20px;
-            }
-        }
-        .post-read-more{
-            float: none;
-            width: 130px;
-            margin-top: 15px;
-            a {
-                font-size: 20px;
-                line-height: 20px;
-            }
-        }
 }
-    .blog-sidebar {
-        .blog-widgets{
-            h5{
-                font-size: 20px;
-                line-height: 24px;
-                font-weight: 500;
-                padding-top:12px;
-                letter-spacing: 1px;
-                margin-bottom: 12px;
-                .right-arrow{
-                    width: 10px;
-                    height: 16px;
-                    display: block;
-                    position: absolute;
-                    top:16px;
-                }
-            }
-            ul{
-                margin: 0px;
-                display: none;
-                padding-bottom:19px;
-                li{
-                    line-height: 1;
-                    a{
-                        font-size: 16px;
-                        line-height: 20px;
-                    }
-                } 
-            }
-        }
-    }
-     .load-more{
-        margin-bottom: 30px;
-    }
-//    .archive .general-page,.page-template-page-blog .general-page {
-//        padding-top: 60px;
-//    }
-    .single-postspage .author-desc {
-        margin-top: 26px;
-    }
-    .single-postspage .breadcrumb {
-        margin-bottom:0px;
-    }
-    .single_wrap_content .download-link{
-        font-size: 20px;
-        background-size: 22px 19px;
-        background-position: right top 6px;
-        width: 175px;
-        &:after{
-            width: 138px;
-        }
-    }
-    .single-postspage .single_wrap_content .download-link {
-        width: 46px;
-        font-size: 20px;
-        &:after{
-            width: 46px;
-        }
-    }
-    
-}
-
 @media (max-width : 720px){
 	.footer-section{
 		.fcontent-wrap{
@@ -4516,9 +4393,6 @@ i{
     .header-block {
         width: 100%;
     }
-    .single-postspage .breadcrumb {
-        margin-top: 32px;
-    }
 }
 @media (max-width : 480px){
 	.fields-3-4, .fields-1-4 {
@@ -4539,22 +4413,7 @@ i{
     .team-slider .slick-dots {
         bottom: 70px;
     }
-    .post-block .post-read-more{
-        width: 100px;
-        margin-top: 10px;
-    }
-    .post-block .post-read-more a {
-        font-size: 16px;
-        line-height: 16px;
-        padding: 5px 6px 3px;
-    }
-    .load-more{
-        font-size: 20px;
-        &:before,&:after{
-            width: calc(50% - 40.5px );
-            height: 3px;
-        }
-    }
+    
 }
 @media (max-width : 450px){
     .cases-wrap .case-wrap{

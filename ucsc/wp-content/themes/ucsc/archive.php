@@ -16,7 +16,7 @@ print_r($post_type_object);
 ?>
 <div id="content" class="general-page general-page-section clearfix" role="main">
     <div class="page-main-block clearfix">
-           <div class="blog-sidebar">
+           <div class="blog-sidebar  hide-w-1200">
                <?php dynamic_sidebar('blog-sidebar'); ?>
             </div>
             <div class="container">
@@ -57,6 +57,9 @@ print_r($post_type_object);
                         <div class="loading load-more" id="loading"><span>Loading...</span></div>
                         <div class="no-more-posts load-more" id="no-more"><span>No More Posts</span></div>
                     <?php } }?>
+                </div>
+                 <div class="blog-sidebar  show-w-1200">
+                   <?php dynamic_sidebar('blog-sidebar'); ?>
                 </div>
             </div>
     </div> 
